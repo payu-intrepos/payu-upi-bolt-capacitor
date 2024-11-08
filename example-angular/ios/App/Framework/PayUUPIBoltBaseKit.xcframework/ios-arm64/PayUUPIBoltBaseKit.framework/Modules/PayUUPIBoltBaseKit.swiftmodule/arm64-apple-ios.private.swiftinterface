@@ -1,0 +1,736 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name PayUUPIBoltBaseKit
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import Foundation
+@_exported import PayUUPIBoltBaseKit
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltRaiseDispute : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var status: Swift.String?
+  @objc public var statusDesc: Swift.String?
+  @objc public var errCode: Swift.String?
+  @objc public var complaintInfo: PayUUPIBoltBaseKit.DisputeComplaintInfo?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class DisputeComplaintInfo : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var actionType: Swift.String?
+  @objc public var crn: Swift.String?
+  @objc public var expectedResolDate: Swift.String?
+  @objc public var ticketNo: Swift.String?
+  @objc public var txnId: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltInitiateMPIN : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var upiTransactionRefNo: Swift.String?
+  @objc public var npciTransactionId: Swift.String?
+  @objc public var otpNpciTransactionId: Swift.String?
+  @objc public var deviceInfo: PayUUPIBoltBaseKit.PayUUPIBoltCustomerDeviceInfo?
+  @objc public var payerType: PayUUPIBoltBaseKit.PayUUPIBoltInitiateMPINPayerType?
+  @objc public var transactionNote: Swift.String?
+  @objc public var refUrl: Swift.String?
+  @objc public var credential: PayUUPIBoltBaseKit.PayUUPIBoltInitiateMPINCredential?
+  @objc public var status: Swift.String?
+  @objc public var statusDesc: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltInitiateMPINPayerType : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var virtualAddress: Swift.String?
+  @objc public var name: Swift.String?
+  @objc public var payerBankName: Swift.String?
+  @objc public var accountNo: Swift.String?
+  @objc public var isMerchant: Swift.String?
+  @objc public var showMerchant: Swift.String?
+  @objc public var defaultVPAStatus: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltInitiateMPINCredential : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var credentialDataType: Swift.String?
+  @objc public var credentialDataLength: Swift.String?
+  @objc public var atmCredentialLength: Swift.String?
+  @objc public var atmCredentialType: Swift.String?
+  @objc public var atmFormatType: Swift.String?
+  @objc public var otpCredentialLength: Swift.String?
+  @objc public var otpCredentialType: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltSetMPIN : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var pspRefNo: Swift.String?
+  @objc public var status: Swift.String?
+  @objc public var accountId: Swift.String?
+  @objc public var statusDesc: Swift.String?
+  @objc public var npciTransId: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltCheckVpaDetail : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var status: Swift.String?
+  @objc public var statusDesc: Swift.String?
+  @objc public var payeeList: [PayUUPIBoltBaseKit.PayUUPIBoltVpaPayeeList]?
+  @objc public var paymentType: Swift.String?
+  @objc public var verificationFlag: Swift.Bool
+  @objc public var merchantDetails: PayUUPIBoltBaseKit.PayUUPIBoltVpaMerchantDetail?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltVpaPayeeList : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var virtualAddress: Swift.String?
+  @objc public var name: Swift.String?
+  @objc public var status: Swift.String?
+  @objc public var statusDesc: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltVpaMerchantDetail : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var merchantCode: Swift.Int
+  @objc public var ifsc: Swift.String?
+  @objc public var accountType: Swift.String?
+  @objc public var subCategoryCode: Swift.Int
+  @objc public var merchantId: Swift.String?
+  @objc public var storeId: Swift.Int
+  @objc public var terminalId: Swift.Int
+  @objc public var merchantType: Swift.String?
+  @objc public var brandName: Swift.String?
+  @objc public var legalName: Swift.String?
+  @objc public var franchiseName: Swift.String?
+  @objc public var ownershipType: Swift.String?
+  @objc public var iin: Swift.Int
+  @objc public var isVerified: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltCheckVpaResponse : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var data: Swift.String?
+  @objc public var mcccode: Swift.String?
+  @objc public var ifsc: Swift.String?
+  @objc public var vpa: Swift.String?
+  @objc public var name: Swift.String?
+  @objc public var cmid: Swift.String?
+  @objc public var merchantType: Swift.String?
+  @objc public var ptype: Swift.String?
+  @objc public var iin: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc open class PayUUPIBoltBaseConfig : ObjectiveC.NSObject {
+  @objc public var key: Swift.String
+  @objc public var merchantName: Swift.String
+  @objc public var email: Swift.String
+  @objc public var phone: Swift.String
+  @objc public var refId: Swift.String
+  @objc public var bankId: Swift.String
+  @objc public var issuingBanks: [Swift.String]
+  @objc public var excludedBankIINs: [Swift.String]
+  @objc public var clientId: Swift.String
+  @objc public var isProduction: Swift.Bool
+  @objc override dynamic public init()
+  @objc public init(key: Swift.String, merchantName: Swift.String, email: Swift.String, phone: Swift.String, refId: Swift.String, bankId: Swift.String = "", issuingBanks: [Swift.String], excludedBankIINs: [Swift.String] = [], clientId: Swift.String = "", isProduction: Swift.Bool)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltVerifyServerGenId : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var status: Swift.String?
+  @objc public var statusDesc: Swift.String?
+  @objc public var errcode: Swift.String?
+  @objc public var servGenId: Swift.String?
+  @objc public var requestInfo: PayUUPIBoltBaseKit.PayUUPIBoltServerGenIdRequestInfo?
+  @objc public var deviceInfo: PayUUPIBoltBaseKit.PayUUPIBoltCustomerDeviceInfo?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltServerGenIdRequestInfo : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var pspId: Swift.String?
+  @objc public var pspRefNo: Swift.String?
+  @objc public var checksumFlag: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public typealias PayUUPIBoltCallBack = (_ response: PayUUPIBoltBaseKit.PayUUPIBoltResponse) -> Swift.Void
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltResponse : ObjectiveC.NSObject {
+  @objc public var code: Swift.Int
+  @objc public var message: Swift.String?
+  @objc public var result: Any?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltGetProfile : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var notificationCount: Swift.String?
+  @objc public var userInfo: PayUUPIBoltBaseKit.ProfileUserInfo?
+  @objc public var defaultVPAStatus: Swift.String?
+  @objc public var vpaAccountDetails: [PayUUPIBoltBaseKit.UserProfileVpaAccountDetail]?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class ProfileUserInfo : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var name: Swift.String?
+  @objc public var mobileNo: Swift.String?
+  @objc public var isMerchant: Swift.String?
+  @objc public var showMerchant: Swift.String?
+  @objc public var secretDetails: PayUUPIBoltBaseKit.ProfileSecretDetail?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc public class ProfileSecretDetail : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var quesId: Swift.String
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class UserProfileVpaAccountDetail : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var virtualAddress: Swift.String?
+  @objc public var defaultVPAStatus: Swift.String?
+  @objc public var accountInfo: [PayUUPIBoltBaseKit.PayUUPIBoltAccountDetail]?
+  @objc public var status: Swift.String?
+  @objc public var statusDesc: Swift.String?
+  @objc public var updateFlag: Swift.String?
+  @objc public var recoveryOptionFlag: Swift.String?
+  @objc public var appConfiguration: PayUUPIBoltBaseKit.UserProfileAppConfiguration?
+  @objc public var collectLimit: Swift.String?
+  @objc public var liteEnableAccountList: Swift.String?
+  @objc public var centralMapperIdCount: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class UserProfileAppConfiguration : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var sessionTime: Swift.Int
+  @objc public var maxVpaCreationLimit: Swift.Int
+  @objc public var customerMenuList: [PayUUPIBoltBaseKit.UserProfileCustomerMenuList]?
+  @objc public var tapzoEnable: Swift.String?
+  @objc public var fingerprintFlag: Swift.String?
+  @objc public var dynamicKeyPinPadFlag: Swift.String?
+  @objc public var disableFingerprint: Swift.String?
+  @objc public var disableDynamicPinPad: Swift.String?
+  @objc public var disableAadhaarPay: Swift.String?
+  @objc public var enableNotificationMessage: Swift.String?
+  @objc public var enableDebitCapping: Swift.String?
+  @objc public var p2pMaxCollectAmount: Swift.String?
+  @objc public var p2pMaxPayAmount: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class UserProfileCustomerMenuList : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var id: Swift.String?
+  @objc public var name: Swift.String?
+  @objc public var order: Swift.String?
+  @objc public var status: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltCustomerDeviceInfo : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var androidId: Swift.String?
+  @objc public var appGenId: Swift.String?
+  @objc public var appName: Swift.String?
+  @objc public var appVersionCode: Swift.String?
+  @objc public var appVersionName: Swift.String?
+  @objc public var capability: Swift.String?
+  @objc public var deviceId: Swift.String?
+  @objc public var deviceType: Swift.String?
+  @objc public var fcmToken: Swift.String?
+  @objc public var geoCode: Swift.String?
+  @objc public var ip: Swift.String?
+  @objc public var location: Swift.String?
+  @objc public var mobileNo: Swift.String?
+  @objc public var os: Swift.String?
+  @objc public var regId: Swift.String?
+  @objc public var relayButton: Swift.String?
+  @objc public var bluetoothMac: Swift.String?
+  @objc public var safetyNetId: Swift.String?
+  @objc public var simId: Swift.String?
+  @objc public var wifiMac: Swift.String?
+  @objc public var reverifyHashKey: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc public class PayUUPIBoltPGDetail : ObjectiveC.NSObject {
+  @objc public var pg: Swift.String
+  @objc public var pgId: Swift.String
+  @objc public var merchChanId: Swift.String
+  @objc public var mcc: Swift.String
+  @objc public var merchId: Swift.String
+  @objc public var pluginKey: Swift.String
+  @objc public init(pg: Swift.String, pgId: Swift.String, merchChanId: Swift.String, mcc: Swift.String, merchId: Swift.String, pluginKey: Swift.String)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltRegisterVpaDetail : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var status: Swift.String?
+  @objc public var statusDesc: Swift.String?
+  @objc public var registrationDate: Swift.String?
+  @objc public var userInfo: PayUUPIBoltBaseKit.PayUUPIBoltRegisterVpaUserInfo?
+  @objc public var servGenId: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltRegisterVpaUserInfo : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var virtualAddress: Swift.String?
+  @objc public var name: Swift.String?
+  @objc public var isMerchant: Swift.String?
+  @objc public var showMerchant: Swift.String?
+  @objc public var defaultFlag: Swift.String?
+  @objc public var secretDetails: PayUUPIBoltBaseKit.PayUUPIBoltRegisterVpaSecretDetails?
+  @objc public var accId: Swift.String?
+  @objc public var custid: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltRegisterVpaSecretDetails : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var secretAnswer: Swift.String?
+  @objc public var quesId: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltGetDisputeList : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var status: Swift.String?
+  @objc public var statusDesc: Swift.String?
+  @objc public var ticketNo: Swift.String?
+  @objc public var upiTranRefNo: Swift.String?
+  @objc public var listofCustDispute: [PayUUPIBoltBaseKit.CustomerDisputeList]?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class CustomerDisputeList : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var ticketNo: Swift.Int
+  @objc public var pgMeTrnRefNo: Swift.Int
+  @objc public var status: Swift.String?
+  @objc public var storeId: Swift.String?
+  @objc public var crtDate: Swift.String?
+  @objc public var fvaddr: Swift.String?
+  @objc public var custid: Swift.String?
+  @objc public var targetDate: Swift.String?
+  @objc public var custRefNo: Swift.Int
+  @objc public var reqReasnDesc: Swift.String?
+  @objc public var txnid: Swift.String?
+  @objc public var txnRemark: Swift.String?
+  @objc public var amount: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltTransactionStatus : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var upiTxnRefNo: Swift.Int
+  @objc public var npciTxnId: Swift.String?
+  @objc public var amount: Swift.String?
+  @objc public var status: Swift.String?
+  @objc public var statusDesc: Swift.String?
+  @objc public var txnRefNo: Swift.Int
+  @objc public var txnStatusDetails: PayUUPIBoltBaseKit.PayUUPIBoltTransactionDetail?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltTransactionDetail : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var result: Swift.String?
+  @objc public var txnId: Swift.String?
+  @objc public var respCode: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltListKeys : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var txnId: Swift.String?
+  @objc public var refId: Swift.String?
+  @objc public var refUrl: Swift.String?
+  @objc public var xmlResp: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc public class PayUUPIBoltPaymentParams : ObjectiveC.NSObject, Foundation.NSCopying {
+  @objc public var key: Swift.String
+  @objc public var transactionId: Swift.String
+  @objc public var amount: Swift.String
+  @objc public var productInfo: Swift.String
+  @objc public var firstName: Swift.String
+  @objc public var email: Swift.String
+  @objc public var phone: Swift.String
+  @objc public var surl: Swift.String
+  @objc public var furl: Swift.String
+  @objc public var additionalParam: [Swift.String : Any]
+  @objc public var udfs: PayUUPIBoltBaseKit.PayUUPIBoltUserDefines?
+  @objc public var payerAccountDetail: PayUUPIBoltBaseKit.PayUUPIBoltAccountDetail?
+  @objc public var payeeAccountDetail: PayUUPIBoltBaseKit.PayUUPIBoltPayeeAccountDetail?
+  @objc public init(key: Swift.String, transactionId: Swift.String, amount: Swift.String, productInfo: Swift.String, firstName: Swift.String, email: Swift.String, phone: Swift.String, surl: Swift.String, furl: Swift.String)
+  @objc public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltUserDefines : ObjectiveC.NSObject {
+  @objc public var udf1: Swift.String?
+  @objc public var udf2: Swift.String?
+  @objc public var udf3: Swift.String?
+  @objc public var udf4: Swift.String?
+  @objc public var udf5: Swift.String?
+  @objc public var udf6: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltHashConstants : ObjectiveC.NSObject {
+  @objc public static let hashString: Swift.String
+  @objc public static let hashType: Swift.String
+  @objc public static let hashName: Swift.String
+  @objc public static let postSalt: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class PayUUPIBoltRemoveAccount : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var status: Swift.String?
+  @objc public var statusDesc: Swift.String?
+  @objc public var errCode: Swift.String?
+  @objc public var accountId: Swift.Int
+  @objc public var requestInfo: PayUUPIBoltBaseKit.AddRemoveRequestInfo?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class AddRemoveRequestInfo : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var pspId: Swift.String?
+  @objc public var pspRefNo: Swift.String?
+  @objc public var checksumFlag: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltAddAccount : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var response: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltBalanceEnquiry : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var statusDescrption: Swift.String?
+  @objc public var npciTranId: Swift.String?
+  @objc public var accountInfo: PayUUPIBoltBaseKit.PayUUPIBoltBalanceEnquiryDetail?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltBalanceEnquiryDetail : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var accId: Swift.String?
+  @objc public var ifscCode: Swift.String?
+  @objc public var uPinLength: Swift.String?
+  @objc public var bankId: Swift.String?
+  @objc public var accountBalance: Swift.String?
+  @objc public var accountName: Swift.String?
+  @objc public var optdLength: Swift.String?
+  @objc public var atmLength: Swift.String?
+  @objc public var accountNo: Swift.String?
+  @objc public var atmdLength: Swift.String?
+  @objc public var otpdLength: Swift.String?
+  @objc public var availableBal: Swift.String?
+  @objc public var otpCardLength: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltBalanceDetail : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var accBalance: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltGetDisputeTypeList : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var status: Swift.String?
+  @objc public var statusDesc: Swift.String?
+  @objc public var ticketNo: Swift.String?
+  @objc public var upiTransactionRefNo: Swift.String?
+  @objc public var disputeTypeList: [PayUUPIBoltBaseKit.DisputeTypeList]?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class DisputeTypeList : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var reasonCode: Swift.String?
+  @objc public var reasonDesc: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltChangeMPIN : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var status: Swift.String?
+  @objc public var statusDesc: Swift.String?
+  @objc public var npciTransId: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltAccountInfo : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var status: Swift.String?
+  @objc public var accountId: Swift.String?
+  @objc public var statusDesc: Swift.String?
+  @objc public var pspRespRefNo: Swift.String?
+  @objc public var accountList: PayUUPIBoltBaseKit.PayUUPIBoltAccountDetail?
+  @objc public var vpaSuggestionList: [Swift.String]?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc public class PayUUPIBoltAccountDetail : ObjectiveC.NSObject, Foundation.NSCopying, Swift.Codable {
+  @objc public var accountId: Swift.String?
+  @objc public var accountNo: Swift.String?
+  @objc public var unmaskAccountNo: Swift.String?
+  @objc public var ifscCode: Swift.String?
+  @objc public var accountName: Swift.String?
+  @objc public var bankCode: Swift.String?
+  @objc public var credentialType: Swift.String?
+  @objc public var credentialLength: Swift.String?
+  @objc public var aeba: Swift.String?
+  @objc public var mmid: Swift.String?
+  @objc public var mbeba: Swift.String?
+  @objc public var accountType: Swift.String?
+  @objc public var formatType: Swift.String?
+  @objc public var atmPinLength: Swift.String?
+  @objc public var bankName: Swift.String?
+  @objc public var otpCredentialType: Swift.String?
+  @objc public var otpLength: Swift.String?
+  @objc public var dLength: Swift.String?
+  @objc public var dType: Swift.String?
+  @objc public var iin: Swift.String?
+  @objc public var bankId: Swift.String?
+  @objc public var vpa: Swift.String?
+  @objc public var defVPAStatus: Swift.String?
+  @objc public var defaultFlag: Swift.String?
+  @objc public var customerName: Swift.String?
+  @objc public var refUrl: Swift.String?
+  @objc public var mpinFlag: Swift.String?
+  @objc public var aepsFlag: Swift.String?
+  @objc public var cardNo: Swift.String?
+  @objc public var expiry: Swift.String?
+  @objc public var balance: Swift.String?
+  @objc public var baltime: Swift.String?
+  @objc public var atmDataType: Swift.String?
+  @objc public var otpDataType: Swift.String?
+  @objc public var intlAccFlag: Swift.String?
+  @objc public var accountNumber: Swift.String?
+  @objc public var preferredFlag: Swift.String?
+  @objc public init(accountId: Swift.String? = nil, accountNo: Swift.String? = nil, unmaskAccountNo: Swift.String? = nil, ifscCode: Swift.String? = nil, accountName: Swift.String? = nil, bankCode: Swift.String? = nil, credentialType: Swift.String? = nil, credentialLength: Swift.String? = nil, aeba: Swift.String? = nil, mbeba: Swift.String? = nil, accountType: Swift.String? = nil, formatType: Swift.String? = nil, atmPinLength: Swift.String? = nil, bankName: Swift.String? = nil, otpCredentialType: Swift.String? = nil, otpLength: Swift.String? = nil, dLength: Swift.String? = nil, dType: Swift.String? = nil, iin: Swift.String? = nil, bankId: Swift.String? = nil, vpa: Swift.String? = nil, defVPAStatus: Swift.String? = nil, defaultFlag: Swift.String? = nil, customerName: Swift.String? = nil, refUrl: Swift.String? = nil, mpinFlag: Swift.String? = nil, aepsFlag: Swift.String? = nil, cardNo: Swift.String? = nil, expiry: Swift.String? = nil, balance: Swift.String? = nil, baltime: Swift.String? = nil, atmDataType: Swift.String? = nil, otpDataType: Swift.String? = nil, intlAccFlag: Swift.String? = nil, accountNumber: Swift.String? = nil, preferredFlag: Swift.String? = nil)
+  @objc public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltPayeeAccountDetail : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var name: Swift.String?
+  @objc public var ifsc: Swift.String?
+  @objc public var mobile: Swift.String?
+  @objc public var vpa: Swift.String?
+  @objc public var vpaType: Swift.String?
+  @objc public var mode: Swift.String?
+  @objc public var merchantId: Swift.String?
+  @objc public var mcc: Swift.String?
+  @objc public var purpose: Swift.String?
+  @objc public var note: Swift.String?
+  @objc public var nickName: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltMakePayment : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var custRefNo: Swift.String?
+  @objc public var upiTransRefNo: Swift.String?
+  @objc public var amount: Swift.String?
+  @objc public var txnAuthDate: Swift.String?
+  @objc public var responseCode: Swift.String?
+  @objc public var approvalNumber: Swift.String?
+  @objc public var status: Swift.String?
+  @objc public var statusDesc: Swift.String?
+  @objc public var accountId: Swift.String?
+  @objc public var payerVPA: Swift.String?
+  @objc public var payeeVPA: Swift.String?
+  @objc public var npciTransId: Swift.String?
+  @objc public var errorCode: Swift.String?
+  @objc public var payType: Swift.String?
+  @objc public var refId: Swift.String?
+  @objc public var prRespCode: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltDeregisterVPA : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var statusDesc: Swift.String?
+  @objc public var deregistrationDate: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc public class PayUUPIBoltError : ObjectiveC.NSObject, Foundation.LocalizedError {
+  @objc public var message: Swift.String
+  @objc public var errorCode: Swift.Int
+  @objc public init(message: Swift.String?, code: Swift.Int = 1)
+  @objc public var errorDescription: Swift.String? {
+    @objc get
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltTransactionHistory : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var type: Swift.String?
+  @objc public var txnId: Swift.String?
+  @objc public var refId: Swift.String?
+  @objc public var dateTime: Swift.String?
+  @objc public var amount: Swift.String?
+  @objc public var debitAccount: Swift.String?
+  @objc public var debitVPA: Swift.String?
+  @objc public var debitBankName: Swift.String?
+  @objc public var creditAccount: Swift.String?
+  @objc public var creditVPA: Swift.String?
+  @objc public var creditBankName: Swift.String?
+  @objc public var query: Swift.String?
+  @objc public var querystatus: Swift.String?
+  @objc public var querydate: Swift.String?
+  @objc public var queryId: Swift.String?
+  @objc public var expirydatetime: Swift.String?
+  @objc public var status: Swift.String?
+  @objc public var mcc: Swift.String?
+  @objc public var initMode: Swift.String?
+  @objc public var purposeCode: Swift.String?
+  @objc public var remarks: Swift.String?
+  @objc public var umn: Swift.String?
+  @objc public var refCategory: Swift.String?
+  @objc public var beneficiaryName: Swift.String?
+  @objc public var mobileNumber: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltDeviceStatus : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var deviceInfo: PayUUPIBoltBaseKit.PayUUPIBoltDeviceInfo?
+  @objc public var status: Swift.String?
+  @objc public var statusDesc: Swift.String?
+  @objc public var deviceStatus: Swift.String?
+  @objc public var simStatus: Swift.String?
+  @objc public var userInfo: PayUUPIBoltBaseKit.PayUUPIBoltDeviceUserInfo?
+  @objc public var flowSimId: Swift.String?
+  @objc public var smsGateWayContent: Swift.String?
+  @objc public var smsGateWayKey: Swift.String?
+  @objc public var smsGateWayNo: Swift.String?
+  @objc public var sessionFlag: Swift.Int
+  @objc public var smsStatus: Swift.String?
+  @objc public var preRegId: Swift.Int
+  @objc public var isPreRegUser: Swift.Bool
+  @objc public var deviceBindTimeSec: Swift.Int
+  @objc public var isUserReg: Swift.Bool
+  @objc public var npciTokenRefreshFlag: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltDeviceInfo : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var deviceId: Swift.String?
+  @objc public var mobileNo: Swift.String?
+  @objc public var simSerialNo: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltDeviceUserInfo : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var virtualAddress: Swift.String?
+  @objc public var name: Swift.String?
+  @objc public var isMerchant: Swift.String?
+  @objc public var showMerchant: Swift.String?
+  @objc public var defVPAStatus: Swift.Bool
+  @objc public var accId: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltBankInfo : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var status: Swift.String?
+  @objc public var statusDesc: Swift.String?
+  @objc public var accountId: Swift.Int
+  @objc public var bankList: [PayUUPIBoltBaseKit.PayUUPIBoltBankDetail]?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltBankDetail : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var bankId: Swift.Int
+  @objc public var bankName: Swift.String?
+  @objc public var ifsc: Swift.String?
+  @objc public var bankCode: Swift.String?
+  @objc public var statusCode: Swift.String?
+  @objc public var iin: Swift.String?
+  @objc public var formatType: Swift.String?
+  @objc public var logo: Swift.String?
+  @objc public var versionList: [PayUUPIBoltBaseKit.PayUUPIBoltBankVersionDetail]?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltBankVersionDetail : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var no: Swift.String?
+  @objc public var desc: Swift.String?
+  @objc public var mandatory: Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Upi Plugin Sample App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Amount</ion-label>
+    <ion-input type="number" [(ngModel)]="amount"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Mobile Number</ion-label>
+    <ion-input type="tel" maxlength="10" [(ngModel)]="mobileNumber"></ion-input>
+  </ion-item>
+  <ion-button expand="block" (click) = "registerAndPay()">Register and Pay</ion-button>
+  <ion-button expand="block" (click) = "openUPIManagement()">Linked Accounts</ion-button>
+
+  <ion-item>
+    <ion-label>Enable Credit Card transactions</ion-label>
+    <ion-checkbox slot="end" [(ngModel)]="isChecked"></ion-checkbox>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Enforce nav :</ion-label>
+    <ion-select [(ngModel)]="selectedValue">
+      <ion-select-option value="ALL">ALL</ion-select-option>
+      <ion-select-option value="TRANSACTIONHISTORY">TRANSACTIONHISTORY</ion-select-option>
+      <ion-select-option value="MANAGEUPIACCOUNTS">MANAGEUPIACCOUNTS</ion-select-option>
+      <ion-select-option value="DISPUTE">DISPUTE</ion-select-option>
+      <ion-select-option value="DEREGISTERUPI">DEREGISTERUPI</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+</ion-content>

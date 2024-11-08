@@ -1,0 +1,74 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name PayUUPIBoltKit
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import CommonCrypto
+import Foundation
+import MessageUI
+import OlivePayLibrary
+import PayUNetworkReachability
+import PayUUPIBoltBaseKit
+@_exported import PayUUPIBoltKit
+import PayUUPIHdfcPluginKit
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class PayUUPIBolt : ObjectiveC.NSObject {
+  @objc public class func initSDK(config: PayUUPIBoltBaseKit.PayUUPIBoltBaseConfig, hashDelegate: any PayUUPIBoltKit.PayUUPIBoltHashDelegate) -> any PayUUPIBoltKit.PayUUPIBoltInterface
+  @objc public class func getInstance() -> (any PayUUPIBoltKit.PayUUPIBoltInterface)?
+  @objc public class func reset()
+  @objc deinit
+}
+public typealias PayUUPIBoltCallBack = (_ response: PayUUPIBoltBaseKit.PayUUPIBoltResponse) -> Swift.Void
+public typealias PayUUPIBoltHashGenerationCompletion = (_ hashDict: [Swift.String : Swift.String]) -> Swift.Void
+@objc public protocol PayUUPIBoltHashDelegate {
+  @objc func generateHash(for param: [Swift.String : Swift.String], onCompletion: @escaping PayUUPIBoltKit.PayUUPIBoltHashGenerationCompletion)
+}
+@objc public protocol PayUUPIBoltDelegate {
+  @objc func onPayUSuccess(response: PayUUPIBoltBaseKit.PayUUPIBoltResponse)
+  @objc func onPayUFailure(response: PayUUPIBoltBaseKit.PayUUPIBoltResponse)
+}
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor @preconcurrency public var payuModelName: Swift.String {
+    get
+  }
+}
+@objc public class HdfcAuthTokenResult : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var username: Swift.String?
+  @objc public var accessToken: Swift.String?
+  @objc public var tokenType: Swift.String
+  @objc public var expiresIn: Swift.Int
+  @objc public var createdAt: Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc public protocol PayUUPIBoltInterface {
+  @objc func isUpiBoltAvailable(pg: Swift.String, callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc func startDeviceBinding(parentVC: UIKit.UIViewController, callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc func getRegisteredMobile() -> Swift.String?
+  @objc func fetchBankList(callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc func fetchAccountsWithIIn(iin: Swift.String, bankName: Swift.String, bankCode: Swift.String?, vpa: Swift.String?, requestType: Swift.String?, isCCTxnEnabled: Swift.Bool, callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc func fetchLinkedAccounts(callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc func checkBalance(parentVC: UIKit.UIViewController, accountDetail: PayUUPIBoltBaseKit.PayUUPIBoltAccountDetail, callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc func activateAccount(parentVC: UIKit.UIViewController, accountDetail: PayUUPIBoltBaseKit.PayUUPIBoltAccountDetail, callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc func removeAccount(accountList: [PayUUPIBoltBaseKit.PayUUPIBoltAccountDetail], requestType: Swift.String, callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc func addAccount(accountDetail: PayUUPIBoltBaseKit.PayUUPIBoltAccountDetail, callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc func deregister(callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc func changeMPIN(parentVC: UIKit.UIViewController, accountDetail: PayUUPIBoltBaseKit.PayUUPIBoltAccountDetail, callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc func updateVpa(accountDetail: PayUUPIBoltBaseKit.PayUUPIBoltAccountDetail, callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc func getDisputeTypeList(upiTransactionRefNo: Swift.String, callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc func disputeList(callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc func pay(parentVC: UIKit.UIViewController, paymentParams: PayUUPIBoltBaseKit.PayUUPIBoltPaymentParams, callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc func checkTransactionStatus(txnId: Swift.String, callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc func verifyTransactionStatus(txnId: Swift.String, callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc func raiseDispute(txnId: Swift.String, refId: Swift.String, amount: Swift.String, query: Swift.String, callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc func fetchTransactionHistory(fromDate: Swift.String, toDate: Swift.String, callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc func cancelTransaction(callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc func fetchVpaProfile(vpa: Swift.String, callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc func saveVpa(vpa: Swift.String, name: Swift.String, nickName: Swift.String, callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc func deleteVpa(vpa: Swift.String, callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc func fetchRegisteredVpaList(callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+}

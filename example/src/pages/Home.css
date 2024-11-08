@@ -1,0 +1,17 @@
+.reduced-gap .item-native {
+  --inner-padding-end: 4px;
+}
+
+.top-input {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.bottom-input {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}

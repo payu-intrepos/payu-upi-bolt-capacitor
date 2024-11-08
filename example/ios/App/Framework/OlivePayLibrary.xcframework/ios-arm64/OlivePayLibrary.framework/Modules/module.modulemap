@@ -1,0 +1,11 @@
+framework module OlivePayLibrary {
+  umbrella header "OlivePayLibrary.h"
+  export *
+
+  module * { export * }
+}
+
+module OlivePayLibrary.Swift {
+  header "OlivePayLibrary-Swift.h"
+  requires objc
+}

@@ -1,0 +1,11 @@
+framework module PayUUPIHdfcPluginKit {
+  umbrella header "PayUUPIHdfcPluginKit.h"
+  export *
+
+  module * { export * }
+}
+
+module PayUUPIHdfcPluginKit.Swift {
+  header "PayUUPIHdfcPluginKit-Swift.h"
+  requires objc
+}

@@ -1,0 +1,85 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name PayUUPIBoltUIKit
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import DeveloperToolsSupport
+import Foundation
+import PayUAssetLibraryKit
+import PayUCrashReporter
+import PayUNetworkReachability
+import PayUUPIBoltBaseKit
+import PayUUPIBoltKit
+@_exported import PayUUPIBoltUIKit
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class PayUUPIBoltUI : ObjectiveC.NSObject {
+  @objc public class func initSDK(parentVC: UIKit.UIViewController, config: PayUUPIBoltUIKit.PayUUPIBoltUIConfig, delegate: any PayUUPIBoltUIKit.PayUUPIBoltUIDelegate) -> PayUUPIBoltUIKit.PayUUPIBoltUIInterface
+  @objc public class func initSDK(parentVC: UIKit.UIViewController, config: PayUUPIBoltUIKit.PayUUPIBoltUIConfig, delegate: any PayUUPIBoltUIKit.PayUUPIBoltUIDelegate, bolt: any PayUUPIBoltKit.PayUUPIBoltInterface) -> PayUUPIBoltUIKit.PayUUPIBoltUIInterface
+  @objc public class func initSDK(parentVC: UIKit.UIViewController, configJSON: Any?, delegate: any PayUUPIBoltUIKit.PayUUPIBoltUIDelegate) -> PayUUPIBoltUIKit.PayUUPIBoltUIInterface?
+  @objc public class func getInstance() -> PayUUPIBoltUIKit.PayUUPIBoltUIInterface?
+  @objc public class func reset()
+  @objc deinit
+}
+@objc public protocol PayUUPIBoltUIDelegate : PayUUPIBoltKit.PayUUPIBoltDelegate, PayUUPIBoltKit.PayUUPIBoltHashDelegate {
+  @objc func onPayUCancel(isTxnInitiated: Swift.Bool)
+}
+@objc public enum PayUUPIBoltUIScreenType : Swift.Int {
+  case all
+  case transactionHistory
+  case manageUPIAccounts
+  case dispute
+  case deregisterUPI
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltUIInterface : ObjectiveC.NSObject {
+  @objc public func isUpiBoltAvailable(callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc public func registerAndPay(paymentParams: PayUUPIBoltBaseKit.PayUUPIBoltPaymentParams, callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc public func openUPIManagement(screenType: PayUUPIBoltUIKit.PayUUPIBoltUIScreenType, callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc public func registerAndPay(paymentParamsJSON: Any?, callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc public func openUPIManagement(screenTypeString: Any?, callback: @escaping PayUUPIBoltKit.PayUUPIBoltCallBack)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class PayUFontFamily : ObjectiveC.NSObject {
+  @objc public var regular: Swift.String
+  @objc public var medium: Swift.String
+  @objc public var semibold: Swift.String
+  @objc public var bold: Swift.String
+  @objc public init(regular: Swift.String, medium: Swift.String, semibold: Swift.String, bold: Swift.String)
+  @objc public static func set(fontFamily: PayUUPIBoltUIKit.PayUFontFamily)
+  @objc public static func reset()
+  @objc deinit
+}
+extension UIKit.UIFont {
+  public var payuSDKFont: UIKit.UIFont {
+    get
+  }
+}
+extension UIKit.UIButton {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public func payuCustomizeFont()
+}
+extension UIKit.UILabel {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public func payuCustomizeFont()
+}
+extension UIKit.UITextField {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public func payuCustomizeFont()
+}
+extension UIKit.UITextView {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public func payuCustomizeFont()
+}
+@_inheritsConvenienceInitializers @objc public class PayUUPIBoltUIConfig : PayUUPIBoltBaseKit.PayUUPIBoltBaseConfig {
+  @objc override dynamic public init()
+  @objc override public init(key: Swift.String, merchantName: Swift.String, email: Swift.String, phone: Swift.String, refId: Swift.String, bankId: Swift.String = super, issuingBanks: [Swift.String], excludedBankIINs: [Swift.String] = super, clientId: Swift.String = super, isProduction: Swift.Bool)
+  @objc deinit
+}
+extension PayUUPIBoltUIKit.PayUUPIBoltUIScreenType : Swift.Equatable {}
+extension PayUUPIBoltUIKit.PayUUPIBoltUIScreenType : Swift.Hashable {}
+extension PayUUPIBoltUIKit.PayUUPIBoltUIScreenType : Swift.RawRepresentable {}

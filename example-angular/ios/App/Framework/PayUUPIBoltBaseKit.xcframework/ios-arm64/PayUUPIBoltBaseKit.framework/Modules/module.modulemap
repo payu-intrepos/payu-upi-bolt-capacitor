@@ -1,0 +1,11 @@
+framework module PayUUPIBoltBaseKit {
+  umbrella header "PayUUPIBoltBaseKit.h"
+  export *
+
+  module * { export * }
+}
+
+module PayUUPIBoltBaseKit.Swift {
+  header "PayUUPIBoltBaseKit-Swift.h"
+  requires objc
+}

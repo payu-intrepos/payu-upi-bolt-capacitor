@@ -1,0 +1,87 @@
+PODS:
+  - Capacitor (6.1.2):
+    - CapacitorCordova
+  - CapacitorApp (6.0.1):
+    - Capacitor
+  - CapacitorCordova (6.1.2)
+  - CapacitorHaptics (6.0.1):
+    - Capacitor
+  - CapacitorKeyboard (6.0.2):
+    - Capacitor
+  - CapacitorStatusBar (6.0.1):
+    - Capacitor
+  - PayUIndia-Analytics (4.0.0):
+    - PayUIndia-NetworkReachability (~> 2.1)
+  - PayUIndia-AssetLibrary (4.0.0)
+  - PayUIndia-CrashReporter (4.0.0)
+  - PayUIndia-NetworkReachability (2.1.0)
+  - PayUIndia-UPIBoltBaseKit (1.0.0-alpha.0)
+  - PayUIndia-UPIBoltKit (1.0.0-alpha.0):
+    - PayUIndia-Analytics (~> 4.0)
+    - PayUIndia-AssetLibrary (~> 4.0)
+    - PayUIndia-CrashReporter (~> 4.0)
+    - PayUIndia-NetworkReachability (~> 2.1)
+    - PayUIndia-UPIBoltBaseKit (~> 1.0.0-alpha.0)
+  - PayUIndia-UPIBoltUIKit (1.0.0-alpha.0):
+    - PayUIndia-UPIBoltKit (~> 1.0.0-alpha.0)
+  - PayuUpiBoltUiCapacitor (0.0.1-alpha.1):
+    - Capacitor
+    - PayUIndia-AssetLibrary
+    - PayUIndia-CrashReporter
+    - PayUIndia-NetworkReachability
+    - PayUIndia-UPIBoltUIKit (~> 1.0.0-alpha.0)
+
+DEPENDENCIES:
+  - "Capacitor (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorApp (from `../../node_modules/@capacitor/app`)"
+  - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorHaptics (from `../../node_modules/@capacitor/haptics`)"
+  - "CapacitorKeyboard (from `../../node_modules/@capacitor/keyboard`)"
+  - "CapacitorStatusBar (from `../../node_modules/@capacitor/status-bar`)"
+  - PayuUpiBoltUiCapacitor (from `../../node_modules/payu-upi-bolt-ui-capacitor`)
+
+SPEC REPOS:
+  trunk:
+    - PayUIndia-Analytics
+    - PayUIndia-AssetLibrary
+    - PayUIndia-CrashReporter
+    - PayUIndia-NetworkReachability
+    - PayUIndia-UPIBoltBaseKit
+    - PayUIndia-UPIBoltKit
+    - PayUIndia-UPIBoltUIKit
+
+EXTERNAL SOURCES:
+  Capacitor:
+    :path: "../../node_modules/@capacitor/ios"
+  CapacitorApp:
+    :path: "../../node_modules/@capacitor/app"
+  CapacitorCordova:
+    :path: "../../node_modules/@capacitor/ios"
+  CapacitorHaptics:
+    :path: "../../node_modules/@capacitor/haptics"
+  CapacitorKeyboard:
+    :path: "../../node_modules/@capacitor/keyboard"
+  CapacitorStatusBar:
+    :path: "../../node_modules/@capacitor/status-bar"
+  PayuUpiBoltUiCapacitor:
+    :path: "../../node_modules/payu-upi-bolt-ui-capacitor"
+
+SPEC CHECKSUMS:
+  Capacitor: 679f9673fdf30597493a6362a5d5bf233d46abc2
+  CapacitorApp: 0bc633b4eae40a1f32cd2834788fad3bc42da6a1
+  CapacitorCordova: f48c89f96c319101cd2f0ce8a2b7449b5fb8b3dd
+  CapacitorHaptics: fe689ade56ef20ec9b041a753c6da70c5d8ec9a9
+  CapacitorKeyboard: 2700f9b18687be021e28b5a09b59eb151a46d5e0
+  CapacitorStatusBar: b81d4fb5d4e0064c712018071b3ab4b810b39a63
+  PayUIndia-Analytics: 0057fe5248e65c5385cfa684b811cfe213e40030
+  PayUIndia-AssetLibrary: b6deb840070f8d805a14eae1e69123fab9f2ea65
+  PayUIndia-CrashReporter: 45792de284df7887e2b4a6339715ec40413e6fad
+  PayUIndia-NetworkReachability: 7703b88310b7fee5df9a9fbf6624bface6adc4aa
+  PayUIndia-UPIBoltBaseKit: d93e12f1b443b8553ecf43f075cc50556f47f50d
+  PayUIndia-UPIBoltKit: bc32279635f029519a56f672d0ae73f87bcdd513
+  PayUIndia-UPIBoltUIKit: a8dd50e808960b38dc1cfde705471efbabae52f1
+  PayuUpiBoltUiCapacitor: 1f7fbb4cf945ad50b4dcf7beb5f04753e6dc63bd
+
+PODFILE CHECKSUM: b37e11d02800b7022f714a7cd9ff3c1ee6b3d075
+
+COCOAPODS: 1.15.2
