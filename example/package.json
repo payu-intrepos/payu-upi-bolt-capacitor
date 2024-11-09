@@ -32,7 +32,7 @@
     "react-dom": "^18.2.0",
     "react-router": "^5.3.4",
     "react-router-dom": "^5.3.4",
-    "payu-upi-bolt-ui-capacitor": "0.0.1-alpha.1"
+    "payu-upi-bolt-ui-capacitor": "0.0.1-alpha.2"
   },
   "devDependencies": {
     "@capacitor/cli": "6.1.2",
